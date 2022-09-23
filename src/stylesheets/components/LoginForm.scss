@@ -1,0 +1,98 @@
+.form{
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    margin-top: -10vh;
+
+    .title{
+        text-align: center;
+        color: #fff;
+    }
+}
+
+form{
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+
+}
+::placeholder{
+    color: white;
+  }
+
+input[type="text"],
+input[type="password"] {
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  background-color: rgba(248, 245, 245, 0.4);
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background: black;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(248, 245, 245, 0.4);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+    background-image: url('../../../public/app_background_mobile.png');
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    background-size: cover;
+}
+
+.list-container {
+    display: flex;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .title {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+  }
+
+
+@media (min-width:769px){
+    form{
+        width: 60%;
+    }
+    .login-form{
+    background-image: url('../../../public/app_background.png');
+    }
+}
+
+    
+ 
