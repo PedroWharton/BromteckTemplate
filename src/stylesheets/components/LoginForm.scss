@@ -87,11 +87,17 @@ button[type="submit"]:hover {
 
 @media (min-width:769px){
     form{
-        width: 60%;
+        width: 55%;
     }
     .login-form{
     background-image: url('../../../public/app_background.png');
     }
+}
+
+@media (min-width:1200px){
+  form{
+      width: 40%;
+  }
 }
 
     
