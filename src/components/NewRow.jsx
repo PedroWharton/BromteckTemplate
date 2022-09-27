@@ -7,15 +7,24 @@ const baseURL = 'https://image.tmdb.org/t/p/original'
 function Row({title, fetchURL, isLargeRow}) {
     const [movies, setMovies] = useState([]);
 
+    
+
     useEffect(function(){
         async function fetchData(){
-            const request = await axios.get(fetchURL);
-            setMovies(request.data.results)
-            return
+            let fetch = function(){
+                const request = axios.get(fetchURL);
+                return request
+            }.then(function(result){
+                setMovies(result.data.results)
+            }).catch(function(error){
+                console.log(error);
+                fetch()
+            })
         }
         fetchData()
 
     }, [fetchURL])
+    
 
 
     
@@ -24,7 +33,7 @@ function Row({title, fetchURL, isLargeRow}) {
     <div className='row'>
         <h2>{title}</h2>
         <div className='row-posters'>
-            {movies?.map(movie => (
+            {movies.map(movie => (
                 <img
                 key={movie.id}
                 className={`row-poster ${isLargeRow && 'row-posterLarge'}`} 
@@ -37,4 +46,3 @@ function Row({title, fetchURL, isLargeRow}) {
 }
 
 export default Row
-
