@@ -3,11 +3,22 @@
     color: white;
 }
 
+.slider-container{
+    display: flex;
+    align-items: center;
+}
+
+.slider-icon{
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100px;
+}
+
 .row-posters{
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
     padding: 20px;
+    scroll-behavior: smooth;
 }
 
 .row-posters::-webkit-scrollbar {
