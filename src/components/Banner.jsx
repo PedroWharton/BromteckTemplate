@@ -1,51 +1,27 @@
-import React, { useState, useEffect } from 'react'
-import axios from '../axios';
-import requests from '../requests';
-//import '../stylesheets/components/Banner.css';
-const baseURL = 'https://image.tmdb.org/t/p/original'
+import React from 'react'
+import '../stylesheets/components/Banner.scss'
 
-const Banner = ({title}) => {
-
-    const [movie, setMovie] = useState([]);
-
-    useEffect(() => {
-      async function fetchData(){
-        const request = await axios.get(requests.fetchNetflixOriginals);
-        setMovie(request.data.results[
-            Math.floor(Math.random() * request.data.results.length - 1)
-        ]);
-      }
-      fetchData()
-    }, [])
-    
-    function truncate(str, n){
-        return str?.length > n ? str.substr(0, n - 1) + "..." : str;
-    }
-
+export default function NewBanner() {
   return (
-    <header className='banner'
-      style={{
-        backgroundSize: "cover",
-        backgroundImage: `url(${baseURL + movie?.backdrop_path})`,
-        backgroundPosition: "center center"
-      }}>
-        <div className='banner-contents'>
-            <h1 className='banner-title'>
-                {movie?.title || movie?.name || movie?.original_name}
-            </h1>
-            <div className='banner-buttons'>
-                <button className="banner-button">Play</button>
-                <button className="banner-button">My List</button>
-            </div>
+    <header className='banner'>
+        <div className="banner-container">
+          <div className='banner-contents'>
+              <h1 className='banner-title'>
+                  Westworld
+              </h1>
+              <div className='banner-buttons'>
+                  <button className="banner-button">Play</button>
+                  <button className="banner-button">My List</button>
+              </div>
 
-            <h1 className="banner-description">
-                {truncate(movie?.overview, 150)}
-            </h1>
+              <h1 className="banner-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi impedit perferendis architecto libero consectetur repudiandae
+              </h1>
+          </div>
+          <img className='banner-image' src="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2016/10/WESTWORLD_2.png?w=1000&quality=60&strip=all&ssl=1" alt='channel banner'/>
         </div>
 
         <div className="banner--fadeBottom"/>
     </header>
   )
 }
-
-export default Banner

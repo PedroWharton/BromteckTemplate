@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import axios from '../axios.js';
-import '../stylesheets/components/Row.css';
+import '../stylesheets/components/Row.scss';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
@@ -8,6 +8,8 @@ const baseURL = 'https://image.tmdb.org/t/p/original'
 
 function Row({title, fetchURL, isLargeRow}) {
     const [movies, setMovies] = useState([]);
+
+    const slider = useRef(null)
 
     useEffect(function(){
         async function fetchData(){
@@ -20,24 +22,21 @@ function Row({title, fetchURL, isLargeRow}) {
     }, [fetchURL])
 
     const slideLeft = () => {
-        let slider = document.getElementById('slider')
-        slider.scrollLeft = slider.scrollLeft - 500
+        slider.current.scrollLeft = slider.current.scrollLeft - 187.775
     }
 
     const slideRight = () => {
-        let slider = document.getElementById('slider')
-        slider.scrollLeft = slider.scrollLeft + 500
+        slider.current.scrollLeft = slider.current.scrollLeft + 187.775
     }
-
-
-    
 
   return (
     <div className='row'>
         <h2>{title}</h2>
         <div className="slider-container">
-            <ArrowBackIosNewIcon className='slider-icon' onClick={slideLeft}/>
-            <div className='row-posters' id='slider'>
+            <div className="arrow-container" onClick={slideLeft}>
+                <ArrowBackIosNewIcon className='slider-icon'/>
+            </div>
+            <div className='row-posters' id='slider' ref={slider}>
                 {movies?.map(movie => (
                     <img
                     key={movie.id}
@@ -46,7 +45,9 @@ function Row({title, fetchURL, isLargeRow}) {
                     alt={movie.name}/>
                 ))}
             </div>
-            <ArrowForwardIosIcon className='slider-icon' onClick={slideRight}/>
+            <div className="arrow-container" onClick={slideRight}>
+                <ArrowForwardIosIcon className='slider-icon'/>
+            </div>
         </div>
     </div> 
   )

@@ -8,16 +8,23 @@
     align-items: center;
 }
 
-.slider-icon{
-    background-color: rgba(0, 0, 0, 0.1);
+.arrow-container{
     height: 100px;
+    display: flex;
+    align-items: center;
+
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 1px;
+    }
 }
+
 
 .row-posters{
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
-    padding: 20px;
+    padding: 20px 8px;
     scroll-behavior: smooth;
 }
 
@@ -31,6 +38,7 @@
     object-fit: contain;
     margin-right: 10px;
     transition: transform 450ms;
+    z-index: 1;
 }
 
 .row-posterLarge{
