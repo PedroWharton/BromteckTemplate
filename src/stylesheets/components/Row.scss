@@ -1,6 +1,8 @@
+@import '../../colors.scss';
+
 .row{
     margin-left: 20px;
-    color: white;
+    color: $typo-color;
 }
 
 .slider-container{

@@ -1,0 +1,9 @@
+@import '../colors.scss';
+
+* {
+    margin: 0;
+  }
+  
+  .App{
+    background-color: $base-color;
+  }

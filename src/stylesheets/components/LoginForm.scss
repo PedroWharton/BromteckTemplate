@@ -1,3 +1,5 @@
+@import '../../colors.scss';
+
 .form{
     font-family: sans-serif;
     display: flex;
@@ -11,7 +13,7 @@
 
     .title{
         text-align: center;
-        color: #fff;
+        color: $typo-color;
     }
 }
 
@@ -22,7 +24,7 @@ form{
 
 }
 ::placeholder{
-    color: white;
+    color: $typo-color;
   }
 
 input[type="text"],
@@ -42,7 +44,7 @@ button[type="submit"] {
     background: black;
     border: none;
     border-radius: 5px;
-    color: #fff;
+    color: $typo-color;
     padding: 10px 20px;
 }
 
@@ -68,7 +70,7 @@ button[type="submit"]:hover {
   }
   
   .error {
-    color: red;
+    color: $error-color;
     font-size: 12px;
   }
   

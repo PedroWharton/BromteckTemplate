@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import '../stylesheets/components/Nav.css'
+import '../stylesheets/components/Nav.scss'
 
 function LoginNav() {
 

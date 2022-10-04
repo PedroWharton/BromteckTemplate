@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import '../stylesheets/components/Nav.css'
+import '../stylesheets/components/Nav.scss'
+import routes from '../templateFile.js';
 
 function Nav() {
 
@@ -25,10 +26,10 @@ function Nav() {
     <div className={`nav ${show && 'nav-black'}`}>
         <img
         className='nav-logo' 
-        src="/Logo_Azul.png" 
+        src={routes.navLogo}
         alt="Netflix Logo" />
         <img 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzfWu5P3XRq40XTOquHgtUR_TZ63XAu2hvQQ&usqp=CAU" 
+        src={routes.navUserLogo} 
         alt="" 
         className="nav-avatar" />
     </div>
