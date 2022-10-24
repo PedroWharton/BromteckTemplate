@@ -22,11 +22,11 @@ function Row({title, fetchURL, isLargeRow}) {
     }, [fetchURL])
 
     const slideLeft = () => {
-        slider.current.scrollLeft = slider.current.scrollLeft - 187.775
+        return slider.current ? (slider.current.scrollLeft -= 190) : null;
     }
 
     const slideRight = () => {
-        slider.current.scrollLeft = slider.current.scrollLeft + 187.775
+        return slider.current ? (slider.current.scrollLeft += 190) : null;
     }
 
   return (
